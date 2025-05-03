@@ -16,8 +16,8 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "36616b284327d47ba8fc96aec2c5f3ecad62f4cb")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "35edafed32ad364d615b511a602bf1959cf008fb")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
@@ -342,6 +342,62 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("bodyText")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
+
+		///<summary>
+		/// Bg Image: Pick a background Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bgImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BgImage => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderComposition.GetBgImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Main Header: Enter main header text here
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainHeader")]
+		public virtual string MainHeader => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderComposition.GetMainHeader(this, _publishedValueFallback);
+
+		///<summary>
+		/// Sub Header: Enter the sub header text here
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subHeader")]
+		public virtual string SubHeader => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderComposition.GetSubHeader(this, _publishedValueFallback);
+	}
+
+	/// <summary>Form page</summary>
+	[PublishedModel("formPage")]
+	public partial class FormPage : PublishedContentModel, IHeaderComposition
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		public new const string ModelTypeAlias = "formPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public new static IPublishedContentType GetModelContentType(IPublishedContentTypeCache contentTypeCache)
+			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.1+06a2a50")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<FormPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
+#pragma warning restore 0109
+
+		private IPublishedValueFallback _publishedValueFallback;
+
+		// ctor
+		public FormPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+			: base(content, publishedValueFallback)
+		{
+			_publishedValueFallback = publishedValueFallback;
+		}
+
+		// properties
 
 		///<summary>
 		/// Bg Image: Pick a background Image

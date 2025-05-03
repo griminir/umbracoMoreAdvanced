@@ -13,11 +13,8 @@
 			<div class="col-md-10 col-lg-8 col-xl-7">
 				<p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 				<div class="my-5">
-					@Html.RenderUmbracoFormDependencies(Url)
-					@await Component.InvokeAsync("RenderForm", 
-					new { formId = Guid.Parse("36e0aa08-45e6-4952-9412-8a43e47506ca"),
-						 theme = "bootstrap3-horizontal"
-					})
+					@Html.RenderUmbracoFormDependencies(Url) 
+					@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("fd81bf2a-ab32-4e9e-b420-2e13d419a1aa"), theme = "bootstrap3-horizontal" })}
 				</div>
 			</div>
 		</div>
